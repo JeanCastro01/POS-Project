@@ -23,7 +23,7 @@
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
-  --danger: #dc3545;
+  --danger: #d3081f;
   --light: #f8f9fa;
   --dark: #343a40;
   --breakpoint-xs: 0;
@@ -58,9 +58,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #2e3438;
   text-align: left;
-  background-color: #fff;
+  background-color: rgb(247, 243, 243);
 }
 
 [tabindex="-1"]:focus {
@@ -153,7 +153,7 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #2a09e4;
   text-decoration: none;
   background-color: transparent;
 }
