@@ -98,7 +98,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addProductModal"> <i class="fa fa-plus"></i> All Staff</a>
+                    <a class="dropdown-item" href="staff.html" data-toggle="modal" data-target="#"> <i class="fa fa-plus"></i> All Staff</a>
                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addStaffModal"> <i class="fa fa-plus"></i> Add New Staff</a>
                  
 
@@ -349,6 +349,102 @@
                         </div>
                     </div>
                 </div>
+                 <!-- Add Product Modal-->
+    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fa fa-tag"></i> Add New Product
+                    </h5>
+                    <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form class="">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Product Type</label>
+                            <select class="form-control text-primary" required>
+                                <option disabled selected><sub>Please select a product type</sub></option>
+                                <option>Speakers</option>
+                                <option>Card Readers</option>
+                                <option>Headphones & MICs</option>
+                                <option>Mousepads</option>
+                                <option>Mice &amp; Pointing Devices</option>
+                                <option>Display Monitors</option>
+                                <option>Keyboards</option>
+                                <option>Cables & Chargers</option>
+                                <option>Power Supplies</option>
+                            </select>
+                         
+                        </div>
+                        <div class="form-group">
+                            <label>Product Brand</label>
+                            <select class="form-control text-primary" required>
+                                <option disabled selected><sub>Please select a product brand</sub></option>
+                                <option>Audionic</option>
+                                <option>DELL</option>
+                                <option>HP</option>
+                                <option>Samsung</option>
+                                <option>AMB</option>
+                                <option>Nokia</option>
+                                <option>Razer</option>
+                                <option>MSI</option>
+                            </select>
+                          
+                        </div>
+                        <div class="form-group">
+                            <label>Color</label>
+                            <select class="form-control text-primary" required>
+                                <option disabled selected><sub>Please select a Color</sub></option>
+                                <option>Black</option>
+                                <option>White</option>
+                                <option>Green</option>
+                                <option>Yellow</option>
+                                <option>Red</option>
+                                <option>Blue</option>
+                            </select>
+                         
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Name</label>
+                            <input type="text" class="form-control" name="" value="" placeholder="Enter product name..." required>
+                            <small class="text-muted">Be more specific with product names. Make sure its unique.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Price <small class="text-muted">(cost/item)</small> </label>
+                            <input type="number" class="form-control" name="" value="" placeholder="Enter shoes price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Stock <small>(How many products are you adding in stock?)</small>
+                            </label>
+                            <input type="number" class="form-control" name="" value="" placeholder="Enter number of items..." required>
+                            <small class="text-muted">This will be used as product quantity in stock keeping
+                                unit.</small>
+                        </div>
+                           <div class="form-group">
+                            <label for="">Product Size <small>(What are the shoes size?)</small>
+                            </label>
+                            <input type="number" class="form-control" name="" value="" placeholder="Enter shoes size..." required>
+                            <small class="text-muted">This will be used as product quantity in stock keeping
+                                unit.</small>
+                        </div>
+                  
+                        <div class="form-group">
+                            <label for="">Description <small class="text-muted">(Optional)</small></label>
+                            <textarea name="name" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
+                        </div>
+                        <small class="text-muted"><em>Please double check information before submitting.</em></small>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <input type="submit" class="btn btn-primary" value="Add Product">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
                 <!-- Add Product Type-->
                 <div class="modal fade" id="addProductTypeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
