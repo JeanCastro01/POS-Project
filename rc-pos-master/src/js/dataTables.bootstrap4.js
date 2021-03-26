@@ -180,5 +180,9 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 };
 
 
+
 return DataTable;
 }));
+
+
+
