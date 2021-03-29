@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>RC-POS - New Sales</title>
+    <title>RC-POS - All Products</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
@@ -64,60 +64,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="retail-dashboard.html">
                     <i class="fa fa-fw fa-line-chart"></i>
-                    <span>Retail Dashboard</span>
+                    <span>Back</span>
                 </a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="newSale.html">
-                    <i class="fa fa-fw fa-plus"></i>
-                    <span>Record New Sale</span></a>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Products
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#addProductModal"> <i class="fa fa-plus"></i> Add Product</a>
-                    <a class="dropdown-item" href="products.html"> <i class="fa fa-tags"></i> All Products</a>
-
-                </div>
-            </li>
-
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Staff
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" href="staff.html"> <i class="fa fa-tags"></i> All Staff</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addStaffModal"> <i class="fa fa-plus"></i> Add new Staff</a>
-
-
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="history.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>History</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="sales-in-progress.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>Sales in Progess</span></a>
-            </li>
+    
 
         </ul>
         <div id="content-wrapper">
@@ -125,22 +76,22 @@
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
+                        <a href="index.html">Manage</a>
                     </li>
-                    <li class="breadcrumb-item active">New Sale</li>
+                    <li class="breadcrumb-item active">Proceed</li>
                 </ol>
                 <!-- Page Content -->
                 <!-- DataTables Example -->
                 <div class="card mb-3">
                     <div class="card-header bg-primary text-white">
-                        <i class="fa fa-table"></i> New Sale
+                        <i class="fa fa-table"></i> All Products
 
 
                         </span>
                         </a>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive col-md-12 bg-light text-right">
+                        <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                                 <thead>
@@ -154,7 +105,7 @@
                                         <th>Cost/item</th>
                                         <th>Colour</th>
                                         <th>Size</th>
-                                        <!-- <th>Action</th> -->
+                                        <th>Action</th>
 
                                     </tr>
                                 </thead>
@@ -176,7 +127,16 @@
                                         <td>85</td>
                                         <td>Orange</td>
                                         <td>40</td>
-                                        <!-- <td>Update | Delete</td> -->
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                    class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                    class="fa fa-trash"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -195,6 +155,16 @@
                                         <td>55</td>
                                         <td>Blue</td>
                                         <td>38</td>
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                    class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                    class="fa fa-trash"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -213,12 +183,22 @@
                                         <td>120</td>
                                         <td>Black</td>
                                         <td>42</td>
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                    class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                    class="fa fa-trash"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
 
                                 </tbody>
                             </table>
-                            <button href= "proceed.html " type="button" class="btn btn-danger">
-                                Proceed</button>
+                            <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addProductModal">
+                                Proceed</button> -->
                         </div>
                     </div>
                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
