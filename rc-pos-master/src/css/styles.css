@@ -390,3 +390,11 @@ body.sidebar-toggled footer.sticky-footer {
     background-color: white;
     cursor: pointer !important;
 }
+.proceedButton{
+    float:right;
+    padding: 5px;
+    border-radius: 25px;
+    border-style:solid;
+    background-color: red;
+    cursor: pointer;
+}
