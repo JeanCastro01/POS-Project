@@ -1,0 +1,22 @@
+{
+  "name": "pos-project",
+  "version": "1.0.0",
+  "description": "POS for a shoes store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanCastro01/POS-Project.git"
+  },
+  "author": "Daniel Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeanCastro01/POS-Project/issues"
+  },
+  "homepage": "https://github.com/JeanCastro01/POS-Project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
