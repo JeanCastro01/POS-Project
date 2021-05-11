@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+//This class handle incoming requests to /products
+
 router.get("/", (req, res, next) => {
     res.status(200).json({
         message: "Handling GET requests to /products"
