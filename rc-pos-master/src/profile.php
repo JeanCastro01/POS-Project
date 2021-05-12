@@ -1,8 +1,3 @@
-<!-- 
- RC-PoS (https://appzaib.com/rc-pos)
- Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
- Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -98,13 +93,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="retail-dashboard.html">
+          <a class="nav-link" href="../src/retail-dashboard.php">
             <i class="fa fa-fw fa-line-chart"></i>
             <span>Retail Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sales-reports.html">
+          <a class="nav-link" href="../src/sales-reports.php">
             <i class="fa fa-fw fa-bar-chart"></i>
             <span>Sales Reports</span></a>
         </li>
@@ -119,7 +114,7 @@
             <span>Payment Reports</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sales.html">
+          <a class="nav-link" href="../src/sales.php">
             <i class="fa fa-fw fa-table"></i>
             <span>Check Sales</span></a>
         </li>
@@ -191,7 +186,7 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="../src/index.php">Home</a>
               </li>
               <li class="breadcrumb-item active">Profile</li>
             </ol>
@@ -201,22 +196,6 @@
             <p>This is a great starting point for new custom pages.</p>
           </div>
           <br><br><br>
-          <!-- Sticky Footer -->
-          <footer class="sticky-footer">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto ">
-                <br><br><br>
-                <small class="text-muted">
-                  You're using  v1.0 of this software. <a href="#"> <i class="fa fa-external-link"></i> Check for Updates</a>. In order to report a bug, please create an issue <a href="https://github.com/vruqa/rc-pos/issues">here.</a>
-                  <br><br><br>
-                  <a href="#">Legal</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Advertisements</a>
-                </small>
-                <br><br><br>
-                <span>Copyright &copy; 2013-2018 <a href="#">Blackrock Digital, LLC.</a>, 2018 <a href="https://vruqa.github.io">Vruqa Designs</a>, 2018 <a href="https://appzaib.github.io">Appzaib</a>. All rights reserved.</span>
-                <br><br><br>
-              </div>
-            </div>
-          </footer>
         </div>
       </div>
       <!-- Scroll to Top Button-->
@@ -573,9 +552,9 @@
           </div>
         </div>
       </div>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery.easing.min.js"></script>
-      <script src="js/rc-pos.min.js"></script>
+      <script src="../src/js/jquery.min.js"></script>
+      <script src="../src/js/bootstrap.bundle.min.js"></script>
+      <script src="../src/js/jquery.easing.min.js"></script>
+      <script src="../src/js/rc-pos.min.js"></script>
     </body>
   </html>

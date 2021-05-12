@@ -1,123 +1,16 @@
-<!-- 
- RC-PoS (https://appzaib.com/rc-pos)
- Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
- Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
--->
-<!DOCTYPE html>
-<html lang="en">
+<!---------------------------------------------------Calling Header ---------------------------------------------------------------------->
+<?php
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>RC-POS - Retail Dashboard</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-</head>
+$title = "Retail Dashboard";
 
-<body id="page-top">
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-        <a class="navbar-brand mr-1" href="index.html">CCT POS</a>
-        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-        <i class="fa fa-bars"></i>
-      </button>
-        <!-- Navbar Search -->
-        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        </form>
-        <!-- Navbar -->
-        <ul class="navbar-nav ml-auto ml-md-0">
-
-
-            <li class="nav-item dropdown no-arrow ml-3">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle fa-fw"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-power-off"></i> Logout</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <ul class="sidebar navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fa fa-fw fa-home"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="retail-dashboard.html">
-                    <i class="fa fa-fw fa-line-chart"></i>
-                    <span>Retail Dashboard</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="newSale.html">
-                    <i class="fa fa-fw fa-plus"></i>
-                    <span>Record New Sale</span></a>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-              Manage Products
-              <i class="float-right fa fa-angle-down"></i>
-            </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addProductModal"> <i class="fa fa-plus"></i> Add Product</a>
-                    <a class="dropdown-item" href="products.html"> <i class="fa fa-tags"></i> All Products</a>
-
-                </div>
-
-            </li>
-
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Staff
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-
-                    <a class="dropdown-item" href="staff.html"> <i class="fa fa-tags"></i> All Staff</a>
-
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addStaffModal"> <i class="fa fa-plus"></i> Add New Staff</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="history.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>History</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="sales-in-progress.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>Sales in Progress</span></a>
-            </li>
-            </li>
-        </ul>
+include '../includes/pageHeader.php';
+?>
         <div id="content-wrapper">
             <div class="container-fluid">
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
+                        <a href="../src/index.php">Home</a>
                     </li>
                     <li class="breadcrumb-item active">Retail Dashboard</li>
                 </ol>
@@ -137,12 +30,7 @@
                                     <small class="text-danger"> <strong>6%<i class="fa fa-arrow-down"></i> </strong></small>
                                 </div>
                             </div>
-                            <!-- <a class="card-footer clearfix small z-1" href="revenue.html">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                            </a> -->
+
                         </div>
                     </div>
                     <div class="col-xl-6 col-sm-12 mb-3">
@@ -159,12 +47,6 @@
                                     <small class="text-primary"> <strong>26%<i class="fa fa-arrow-up"></i> </strong></small>
                                 </div>
                             </div>
-                            <!-- <a class="card-footer clearfix small z-1" href="sales-count.html">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                      <i class="fa fa-angle-right"></i>
-                    </span>
-                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -183,12 +65,6 @@
                                     <small class="text-danger"> <strong>3%<i class="fa fa-arrow-down"></i> </strong></small>
                                 </div>
                             </div>
-                            <!-- <a class="card-footer clearfix small z-1" href="gross-profit.html">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                            <i class="fa fa-angle-right"></i>
-                          </span>
-                            </a> -->
                         </div>
                     </div>
                     <div class="col-xl-6 col-sm-12 mb-3">
@@ -205,32 +81,9 @@
                                     <small class="text-primary"> <strong>52%<i class="fa fa-arrow-up"></i> </strong></small>
                                 </div>
                             </div>
-                            <!-- <a class="card-footer clearfix small z-1" href="accounts.html">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                            <i class="fa fa-angle-right"></i>
-                          </span>
-                            </a> -->
                         </div>
                     </div>
                 </div>
-
-                <!-- Sticky Footer -->
-                <footer class="sticky-footer">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto ">
-                            <br><br><br>
-                            <small class="text-muted">
-                You're using  v1.0 of this software. <a href="#"> <i class="fa fa-external-link"></i> Check for Updates</a>. In order to report a bug, please create an issue <a href="https://github.com/vruqa/rc-pos/issues">here.</a>
-                <br><br><br>
-                <a href="#">Legal</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Advertisements</a>
-              </small>
-                            <br><br><br>
-                            <span>Copyright &copy; 2013-2018 <a href="#">Blackrock Digital, LLC.</a>, 2018 <a href="https://vruqa.github.io">Vruqa Designs</a>, 2018 <a href="https://appzaib.github.io">Appzaib</a>. All rights reserved.</span>
-                            <br><br><br>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
         <!-- Scroll to Top Button-->
@@ -424,12 +277,12 @@
                     </div>
                 </div>
 
-                <script src="js/jquery.min.js"></script>
-                <script src="js/bootstrap.bundle.min.js"></script>
-                <script src="js/jquery.easing.min.js"></script>
-                <script src="js/chart.min.js"></script>
-                <script src="js/rc-pos.min.js"></script>
-                <script src="js/chart-area-demo.js"></script>
+                <script src="../src/js/jquery.min.js"></script>
+                <script src="../src/js/bootstrap.bundle.min.js"></script>
+                <script src="../src/js/jquery.easing.min.js"></script>
+                <script src="../src/js/chart.min.js"></script>
+                <script src="../src/js/rc-pos.min.js"></script>
+                <script src="../src/js/chart-area-demo.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,4 @@
-<!-- 
- RC-PoS (https://appzaib.com/rc-pos)
- Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
- Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
--->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>RC-POS - Sales in Progress</title>
+    <title>RC-POS - Purchase overview</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
@@ -25,17 +21,16 @@
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fa fa-bars"></i>
         </button>
-        <!-- Navbar Search -->
-        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        </form>
-        <!-- Navbar -->
-        <ul class="navbar-nav ml-auto ml-md-0">
+
+        <ul class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+
 
             <li class="nav-item dropdown no-arrow ml-3">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+
 
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-power-off"></i> Logout</a>
                 </div>
@@ -52,96 +47,52 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="retail-dashboard.html">
-                    <i class="fa fa-fw fa-line-chart"></i>
-                    <span>Retail Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="newSale.html">
-                    <i class="fa fa-fw fa-plus"></i>
-                    <span>Record New Sale</span></a>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Products
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
+                    <i class="fa fa-chevron-circle-left"></i>
+                    <span>Back</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addProductModal"> <i class="fa fa-plus"></i> Add Product</a>
-                    <a class="dropdown-item" href="products.html"> <i class="fa fa-tags"></i> All Products</a>
-
-                </div>
             </li>
 
 
 
-            
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Staff
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                  <a class="dropdown-item" href="staff.html"> <i class="fa fa-tags"></i> All Staff</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addStaffModal"> <i class="fa fa-plus"></i> Add New Staff</a>
-
-
-                </div>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="history.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>History</span></a>
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="sales-in-progress.html">
-                        <i class="fa fa-fw fa-calendar"></i>
-                        <span>Sales in Progress</span></a>
-                </li>
-            </li>
         </ul>
         <div id="content-wrapper">
             <div class="container-fluid">
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active">Sales in Progress</li>
+                        <b> Purchase </b></li>
+                    <li class="breadcrumb-item active">Overview</li>
                 </ol>
                 <!-- Page Content -->
                 <!-- DataTables Example -->
                 <div class="card mb-3">
                     <div class="card-header bg-primary text-white">
-                        <i class="fa fa-table"></i> Sales in Progress
+                        <i class="fa fa-table"></i> All Products
+
+
+                        </span>
+                        </a>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive col-md-08 bg-light text-center">
+                        <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Product Image</th>
+                                        <th>Select</th>
+                                        <th>Photo</th>
                                         <th>Product Name</th>
+                                        <th>Product Type</th>
                                         <th>Brand</th>
+                                        <th>In-stock</th>
+                                        <th>Cost/item</th>
+                                        <th>Colour</th>
                                         <th>Size</th>
-                                        <th>Price</th>
-                                        <th>Customer email</th>
-                                        <th>Date</th>
+                                        <th>Action</th>
+
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     <tr>
                                         <td>
@@ -152,13 +103,24 @@
                                                 </label>
                                             </div>
                                         </td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                        <td>06/10/2018</td>
+                                        <td>#</td>
+                                        <td>Mouse &amp; Pointing Devices</td>
+                                        <td>Runners</td>
+                                        <td>Nike</td>
+                                        <td>6</td>
+                                        <td>85</td>
+                                        <td>Orange</td>
+                                        <td>40</td>
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                    class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                    class="fa fa-trash"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -170,12 +132,23 @@
                                             </div>
                                         </td>
                                         <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                        <td>06/10/2018</td>
+                                        <td>Mouse &amp; Pointing Devices</td>
+                                        <td>Boots</td>
+                                        <td>Adidas</td>
+                                        <td>10</td>
+                                        <td>55</td>
+                                        <td>Blue</td>
+                                        <td>38</td>
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                    class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                    class="fa fa-trash"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -187,46 +160,35 @@
                                             </div>
                                         </td>
                                         <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                       <td>#</td>
-                                        <td>06/10/2018</td>
+                                        <td>Mouse &amp; Pointing Devices</td>
+                                        <td>Dress Shoes</td>
+                                        <td>Tommy Hilfiger</td>
+                                        <td>3</td>
+                                        <td>120</td>
+                                        <td>Black</td>
+                                        <td>42</td>
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                    class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                                                    class="fa fa-trash"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
+
                                 </tbody>
                             </table>
-                          
+                            <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addProductModal">
+                                Proceed</button> -->
                         </div>
-                        <a href="proceed.html"> <button   type="button" style="float: right;" class="btn btn-danger">
-                            Proceed</button></a>
-                       
                     </div>
                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div>
             </div>
             <br><br><br>
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto ">
-                        <br><br><br>
-                        <small class="text-muted">
-                            You're using v1.0 of this software. <a href="#"> <i class="fa fa-external-link"></i> Check
-                                for Updates</a>. In order to report a bug, please create an issue <a
-                                href="https://github.com/vruqa/rc-pos/issues">here.</a>
-                            <br><br><br>
-                            <a href="#">Legal</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a
-                                href="#">Advertisements</a>
-                        </small>
-                        <br><br><br>
-                        <span>Copyright &copy; 2013-2018 <a href="#">Blackrock Digital, LLC.</a>, 2018 <a
-                                href="https://vruqa.github.io">Vruqa Designs</a>, 2018 <a
-                                href="https://appzaib.github.io">Appzaib</a>. All rights reserved.</span>
-                        <br><br><br>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <!-- Scroll to Top Button-->
@@ -253,8 +215,7 @@
         </div>
     </div>
     <!-- Add Product Modal-->
-    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
@@ -329,30 +290,26 @@
                         </div>
                         <div class="form-group">
                             <label for="">Product Name</label>
-                            <input type="text" class="form-control" name="" value="" placeholder="Enter product name..."
-                                required>
+                            <input type="text" class="form-control" name="" value="" placeholder="Enter product name..." required>
                             <small class="text-muted">Be more specific with product names. Make sure its
                                 unique.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Product Price <small class="text-muted">(cost/item)</small>
                             </label>
-                            <input type="number" class="form-control" name="" value=""
-                                placeholder="Enter cost of product per item..." required>
+                            <input type="number" class="form-control" name="" value="" placeholder="Enter cost of product per item..." required>
                         </div>
                         <div class="form-group">
-                            <label for="">Product Stock 
+                            <label for="">Product Stock
                                 <small>(Quantity)</small>
                             </label>
-                            <input type="number" class="form-control" name="" value=""
-                                placeholder="Enter number of items..." required>
+                            <input type="number" class="form-control" name="" value="" placeholder="Enter number of items..." required>
                             <small class="text-muted">This will be used as product quantity in stock keeping
                                 unit.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Description <small class="text-muted">(Optional)</small></label>
-                            <textarea name="name" class="form-control" cols="80"
-                                placeholder="Add some note or description about this product..."></textarea>
+                            <textarea name="name" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
                         </div>
 
                         <small class="text-muted"><em>Please double check information before
@@ -367,66 +324,116 @@
         </div>
     </div>
 
-                <!-- Add Product Staff Test-->
-                <div class="modal fade" id="addStaffModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary text-white">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    <i class="fa fa-industry"></i> Add Staff
-                                </h5>
-                                <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <form class="">
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <labe>First Name</label>
-                                            <input type="text" class="form-control" name="" value="" placeholder="Enter first name here..." required>
-            
-                                    </div>
-            
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" name="" value="" placeholder="Enter last name here..." required>
-            
-                                    </div>
-            
-                                    <div class="form-group">
-                                        <label for="">Role</label>
-                                        <input type="text" class="form-control" name="" value="" placeholder="Enter role here..." required>
-            
-                                    </div>
-            
-                                    <div class="form-group">
-                                        <label>Username</label>
-                                        <input type="text" class="form-control" name="" value="" placeholder="Enter username here..." required>
-            
-                                    </div>
-            
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control" name="" value="" placeholder="Enter password here..." required>
-            
-                                    </div>
-            
-                                    <div class="modal-footer">
-                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                        <input type="submit" class="btn btn-primary" value="Add Staff">
-                                    </div>
-                            </form>
+    <!-- Add Product Staff Test-->
+    <div class="modal fade" id="addStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fa fa-industry"></i> Add Staff
+                    </h5>
+                    <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form class="">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <labe>First Name</label>
+                                <input type="text" class="form-control" name="" value="" placeholder="Enter first name here..." required>
+
                         </div>
+
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="" value="" placeholder="Enter last name here..." required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Role</label>
+                            <input type="text" class="form-control" name="" value="" placeholder="Enter role here..." required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="" value="" placeholder="Enter username here..." required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="" value="" placeholder="Enter password here..." required>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <input type="submit" class="btn btn-primary" value="Add Staff">
+                        </div>
+                </form>
+                </div>
+                </div>
+            </div>
+
+            <!-- Proceed Modal-->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
                     </div>
                 </div>
-              
-                <script src="js/jquery.min.js"></script>
-                <script src="js/bootstrap.bundle.min.js"></script>
-                <script src="js/jquery.easing.min.js"></script>
-                <script src="js/chart.min.js"></script>
-                <script src="js/rc-pos.min.js"></script>
-                <script src="js/chart-area-demo.js"></script>
+            </div>
+        </div>
+
+        <script src="../src/js/jquery.min.js"></script>
+        <script src="../src/js/bootstrap.bundle.min.js"></script>
+        <script src="../src/js/jquery.easing.min.js"></script>
+        <script src="../src/js/chart.min.js"></script>
+        <script src="../src/js/rc-pos.min.js"></script>
+        <script src="../src/js/chart-area-demo.js"></script>
 </body>
 
 </html>

@@ -13,15 +13,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>RC-POS - Update Products</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="../src/css/bootstrap.css" rel="stylesheet">
+    <link href="../src/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="../src/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../src/css/styles.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-        <a class="navbar-brand mr-1" href="index.html">CCT POS</a>
+        <a class="navbar-brand mr-1" href="../src/index.php">CCT POS</a>
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fa fa-bars"></i>
         </button>
@@ -32,7 +32,7 @@
         <ul class="sidebar navbar-nav active">
 
             <li class="nav-item">
-                <a class="nav-link" href="products.html">
+                <a class="nav-link" href="../src/products.php">
                     <i class="fa fa-chevron-circle-left"></i>
                     <span>Back</span>
                 </a>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="nav-link" href="newSale.html"> <input type="submit" class="btn btn-primary" value="Update"></a>
+                        <a class="nav-link" href="../src/newSale.php"> <input type="submit" class="btn btn-primary" value="Update"></a>
                     </div>
                 </form>
             </div>
@@ -153,12 +153,12 @@
     </a>
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/rc-pos.min.js"></script>
-    <script src="js/chart-area-demo.js"></script>
+    <script src="../src/js/jquery.min.js"></script>
+    <script src="../src/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/js/jquery.easing.min.js"></script>
+    <script src="../src/js/chart.min.js"></script>
+    <script src="../src/js/rc-pos.min.js"></script>
+    <script src="../src/js/chart-area-demo.js"></script>
 </body>
 
 </html>

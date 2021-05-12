@@ -1,149 +1,31 @@
-<!-- 
- RC-PoS (https://appzaib.com/rc-pos)
- Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
- Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
--->
-<!DOCTYPE html>
-<html lang="en">
+<!---------------------------------------------------Calling Header ---------------------------------------------------------------------->
+<?php
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>RC-POS - All Products</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-</head>
+$title = "New Sale";
 
-<body id="page-top">
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-        <a class="navbar-brand mr-1" href="index.html">CCT POS</a>
-        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-            <i class="fa fa-bars"></i>
-        </button>
-        <!-- Navbar Search -->
-        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        </form>
-        <!-- Navbar -->
-        <ul class="navbar-nav ml-auto ml-md-0">
-
-
-            <li class="nav-item dropdown no-arrow ml-3">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle fa-fw"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-
-
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-power-off"></i> Logout</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <ul class="sidebar navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fa fa-fw fa-home"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="retail-dashboard.html">
-                    <i class="fa fa-fw fa-line-chart"></i>
-                    <span>Retail Dashboard</span>
-                </a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link" href="newSale.html">
-                    <i class="fa fa-fw fa-plus"></i>
-                    <span>Record New Sale</span></a>
-            </li>
-
-
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Products
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#addProductModal"> <i class="fa fa-plus"></i> Add Product</a>
-                    <a class="dropdown-item" href="products.html"> <i class="fa fa-tags"></i> All Products</a>
-
-                </div>
-            </li>
-
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-folder"></i>
-                    <span>
-                        Manage Staff
-                        <i class="float-right fa fa-angle-down"></i>
-                    </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Inventory</h6>
-                    <a class="dropdown-item" href="staff.html"> <i class="fa fa-tags"></i> All Staff</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#addStaffModal"> <i class="fa fa-plus"></i> Add new Staff</a>
-
-
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="history.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>History</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="sales-in-progress.html">
-                    <i class="fa fa-fw fa-calendar"></i>
-                    <span>Sales in Progess</span></a>
-            </li>
-
-        </ul>
+include '../includes/pageHeader.php';
+?>
         <div id="content-wrapper">
             <div class="container-fluid">
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Manage</a>
+                        <a href="../src/index.php">Home</a>
                     </li>
-                    <li class="breadcrumb-item active">All Products</li>
+                    <li class="breadcrumb-item active">New Sale</li>
                 </ol>
                 <!-- Page Content -->
                 <!-- DataTables Example -->
                 <div class="card mb-3">
                     <div class="card-header bg-primary text-white">
-                        <i class="fa fa-table"></i> All Products
+                        <i class="fa fa-table"></i> New Sale
 
 
                         </span>
                         </a>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <select name="products" id="maxRows">
-                                <option value="5000">Show All</option>
-                                <option value="5">5</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="75">75</option>
-                                <option value="100">100</option>
-
-                            </select>
+                        <div class="table-responsive col-md-09 bg-light text-center">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                                 <thead>
@@ -157,7 +39,7 @@
                                         <th>Cost/item</th>
                                         <th>Colour</th>
                                         <th>Size</th>
-                                        <th>Action</th>
+                                       
 
                                     </tr>
                                 </thead>
@@ -179,16 +61,7 @@
                                         <td>85</td>
                                         <td>Orange</td>
                                         <td>40</td>
-                                        <td>
-                                            <li class="list-inline-item">
-                                                <a href="updateProducts.html"> <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i> </a></button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></button>
-                                            </li>
-                                        </td>
+                                      
                                     </tr>
                                     <tr>
                                         <td>
@@ -207,16 +80,6 @@
                                         <td>55</td>
                                         <td>Blue</td>
                                         <td>38</td>
-                                        <td>
-                                            <li class="list-inline-item">
-                                                <a href="updateProducts.html"> <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i></a></button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></button>
-                                            </li>
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -235,53 +98,19 @@
                                         <td>120</td>
                                         <td>Black</td>
                                         <td>42</td>
-                                        <td>
-                                            <li class="list-inline-item">
-                                                <a href="updateProducts.html"> <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i></a></button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></button>
-                                            </li>
-                                        </td>
                                     </tr>
 
                                 </tbody>
                             </table>
-
-                            <!-- <div class="pagination-container">
-                                <nav>
-                                    <ul class="pagination"></ul>
-                                </nav>
-                            </div> -->
-
-
+                            
                         </div>
+                        <a href="proceed.html"> <button type="button" style="float: right;" class="btn btn-danger">
+                            Proceed</button></a>
                     </div>
                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div>
             </div>
             <br><br><br>
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto ">
-                        <br><br><br>
-                        <small class="text-muted">
-                            You're using v1.0 of this software. <a href="#"> <i class="fa fa-external-link"></i> Check
-                                for Updates</a>. In order to report a bug, please create an issue <a href="https://github.com/vruqa/rc-pos/issues">here.</a>
-                                                <br><br><br>
-                                                <a href="#">Legal</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Advertisements</a>
-                                                </small>
-                        <br><br><br>
-                        <span>Copyright &copy; 2013-2018 <a href="#">Blackrock Digital, LLC.</a>, 2018 <a
-                                href="https://vruqa.github.io">Vruqa Designs</a>, 2018 <a
-                                href="https://appzaib.github.io">Appzaib</a>. All rights reserved.</span>
-                        <br><br><br>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <!-- Scroll to Top Button-->
@@ -302,7 +131,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="login.html">Logout</a>
+                    <a class="btn btn-danger" href="../login.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -417,7 +246,7 @@
         </div>
     </div>
 
-    <!-- Add Staff Test-->
+    <!-- Add Product Staff Test-->
     <div class="modal fade" id="addStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -521,68 +350,12 @@
             </div>
         </div>
 
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/chart.min.js"></script>
-        <script src="js/rc-pos.min.js"></script>
-        <script src="js/chart-area-demo.js"></script>
-
-        <!-- <script>
-            var table = '#dataTable'
-            $('#maxRows').on('change', function() {
-                $('.pagination').html('')
-                var trnum = 0;
-                var maxRows = parseInt($(this).val())
-                vartotalRows = (table + ' tbody tr').length
-                $(table + ' tr:gt(0)').each(function() {
-                    trnum++
-                    if (trnum > maxRows) {
-                        $(this).hide()
-                    }
-                    if (trnum <= maxRows) {
-                        $(this).show()
-                    }
-                })
-                if (totalRows > maxRows) {
-                    var pagenum = Math.ceil(totalRows / maxRows)
-                    for (var i = 1; i < pagenum;) {
-                        $('.pagination').append('li data-page="' + i + '">\<span>' + i++ + '<span class="sr-only">(current) </span> </span\</li>')
-                            .show()
-                    }
-                }
-                $('.pagination li:irst-child').addClass('active')
-                $('.pagination li').on('click', function() {
-
-                    var pageNum = $(this).attr('data-page')
-                    vartrIndex = 0;
-                    $('.pagination li').removeClass('active')
-                    $(this).addClass('active')
-                    $(table + ' tr:gt(0)').each(function() {
-
-                        trIndex++
-                        if (trIndex > (maxRows * pageNum) || tr <= ((maxRows * pageNum) - maxRows)) {
-                            $(this).hide()
-                        } else {
-                            $(this).show
-                        }
-                    })
-                })
-
-            })
-            $
-                (function() {
-                    $('table tr:eq(0)').prepend('<th>ID<th>')
-                    var id = 0;
-                    $('table tr:t(0)').each(function() {
-                        id++
-                        $(this).prepend('<td>' + id + '</td')
-                    })
-
-                })
-        </script> -->
-
+        <script src="../src/js/jquery.min.js"></script>
+        <script src="../src/js/bootstrap.bundle.min.js"></script>
+        <script src="../src/js/jquery.easing.min.js"></script>
+        <script src="../src/js/chart.min.js"></script>
+        <script src="../src/js/rc-pos.min.js"></script>
+        <script src="../src/js/chart-area-demo.js"></script>
 </body>
 
 </html>

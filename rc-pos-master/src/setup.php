@@ -1,8 +1,3 @@
-<!-- 
- RC-PoS (https://appzaib.com/rc-pos)
- Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
- Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -102,8 +97,8 @@
         </div>
       </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
+    <script src="../src/js/jquery.min.js"></script>
+    <script src="../src/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/js/jquery.easing.min.js"></script>
  </body>
 </html>
