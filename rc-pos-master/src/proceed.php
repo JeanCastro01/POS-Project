@@ -336,44 +336,50 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form class="">
+                <form class="" method="POST" action="../includes/insertNewStaff.php">
                     <div class="modal-body">
                         <div class="form-group">
                             <labe>First Name</label>
-                                <input type="text" class="form-control" name="" value="" placeholder="Enter first name here..." required>
+                                <input type="text" class="form-control" id="fname" name="fname" value="" placeholder="Enter first name here..." required>
 
                         </div>
 
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" name="" value="" placeholder="Enter last name here..." required>
+                            <input type="text" class="form-control" id="lname" name="lname" value="" placeholder="Enter last name here..." required>
 
                         </div>
 
                         <div class="form-group">
                             <label for="">Role</label>
-                            <input type="text" class="form-control" name="" value="" placeholder="Enter role here..." required>
+                            <input type="text" class="form-control" id="role" name="role" value="" placeholder="Enter role here..." required>
 
                         </div>
 
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" name="" value="" placeholder="Enter username here..." required>
+                            <input type="text" class="form-control" id="username" name="username" value="" placeholder="Enter username here..." required>
 
                         </div>
 
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" name="" value="" placeholder="Enter password here..." required>
+                            <input type="password" class="form-control" id="password" name="password" value="" placeholder="Enter password here..." required>
 
                         </div>
 
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <input type="submit" class="btn btn-primary" value="Add Staff">
+                         <input type="submit" class="btn btn-primary" value="Add Staff">
+                          
                         </div>
                 </form>
-                </div>
+                <?php
+// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
+
+include '../includes/alertMessage.php'; 
+
+?>
                 </div>
             </div>
 
