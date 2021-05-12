@@ -49,7 +49,7 @@ include '../includes/pageHeader.php';
 
   include("../includes/connection.php");
 
-    $sql = "SELECT Item_ID, description, image,  name, type, brand, quantity, price, colour, size FROM Items";
+    $sql = "SELECT * FROM Items";
     $result = $conn->query($sql);
 
     $nRows = $result->num_rows;
@@ -85,7 +85,7 @@ include '../includes/pageHeader.php';
           <tr>
          
           
-          <td>".'<img src="' . $row["image"] . '"  width="80" height="60"">'; "</td>
+          <td>".'<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>'."</td>
           <td>" . $row["name"] . "</td>
           <td>" . $row["type"] . "</td>
           <td>" . $row["brand"] . "</td>
@@ -93,12 +93,12 @@ include '../includes/pageHeader.php';
           <td>" . $row["price"] . "</td>
           <td>" . $row["colour"] . "</td>
           <td>" . $row["size"] . "</td>
-          <td> <a href='updateProducts.php?image={$row['image']}&name={$row['name']}&type={$row['type']}
+          <td> <a href='updateProducts.php?name={$row['name']}&type={$row['type']}
           &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
-          class='fa fa-edit'></i> </a></button></a>
-          <a href='updateProducts.php?image={$row['image']}&name={$row['name']}&type={$row['type']}
+          class='fa fa-edit'></i> </a>
+          <a href='../includes/deleteProduct.php?Item_ID{$row['Item_ID']}&=name={$row['name']}&type={$row['type']}
           &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
-          class='fa fa-trash'></i> </a></button></a>
+          class='fa fa-trash'></i></a>
           </td>";
     
       }
@@ -107,19 +107,15 @@ include '../includes/pageHeader.php';
     ?>
 
 
-    
-<!----------------------------------------------------------------------------------------------------------------------------->
-                           
-                         
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->
+              
 
-                        </div>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-            <br><br><br>
-        </div>
-    </div>
+<?php
+
+include '../includes/alertMessage.php'; 
+
+?>
+           
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fa fa-angle-up"></i>
@@ -155,90 +151,57 @@ include '../includes/pageHeader.php';
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form class="">
-                    <div class="modal-body">
+                <form class="" method="POST" action="../includes/insertNewProduct.php">
+
+                   <div class="modal-body">
+
+                   <div class="form-group">
+                   <label class="form-label" for="customFile">Default file input example</label>
+                        <input type="file" class="form-control" id="customFile" />
+                        </div>
+
                         <div class="form-group">
-                            <label>Product Type</label>
-                            <select class="form-control text-primary" required>
-                                <option disabled selected><sub>Please select a product type</sub></option>
-                                <option>athletic shoes</option>
-                                <option>climbing shoes</option>
-                                <option>cycling shoes</option>
-                                <option>dress shoes</option>
-                                <option>golf shoes</option>
-                                <option>high heels</option>
-                                <option>running shoes</option>
-                                <option>skate shoes</option>
-                                <option>platform shoes</option>
-                            </select>
+                        <label for="">Type</label>
+                            <input type="text" class="form-control" name="type" id="type" value="" placeholder="Enter type..." required>
+                        </div>
+                        <div class="form-group">
+                        <label for="">Brand</label>
+                            <input type="text" class="form-control" name="brand" id="brand" value="" placeholder="Enter brand..." required>
+                        </div>
+                        <div class="form-group">
+                        <label for="">Colour</label>
+                            <input type="text" class="form-control" name="colour" id="colour" value="" placeholder="Enter colour..." required>
+           
 
                         </div>
                         <div class="form-group">
-                            <label>Product Brand</label>
-                            <select class="form-control text-primary" required>
-                                <option disabled selected><sub>Please select a product brand</sub></option>
-                                <option>Nike</option>
-                                <option>adidas</option>
-                                <option>New Balance</option>
-                                <option>ASICS</option>
-                                <option>PUMA</option>
-                                <option>Skechers</option>
-                                <option>Fila</option>
-                                <option>Converse</option>
-                            </select>
-
+                            <label for="">Size</label>
+                            <input type="number" class="form-control" name="size" id="size" value="" placeholder="Enter shoes size..." required>
                         </div>
-                        <div class="form-group">
-                            <label>Color</label>
-                            <select class="form-control text-primary" required>
-                                <option disabled selected><sub>Please select a Color </sub></option>
-                                <option>Blue</option>
-                                <option>Green</option>
-                                <option>Black</option>
-                                <option>Yellow</option>
-                                <option>White</option>
-                                <option>Red</option>
-                            </select>
 
-                        </div>
-                        <div class="form-group">
-                            <label>Size</label>
-                            <select class="form-control text-primary" required>
-                                <option disabled selected><sub>Please select a Size </sub></option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                            </select>
-
-                        </div>
+                       
                         <div class="form-group">
                             <label for="">Product Name</label>
-                            <input type="text" class="form-control" name="" value="" placeholder="Enter product name..." required>
+                            <input type="text" class="form-control" name="name" id="name" value="" placeholder="Enter product name..." required>
                             <small class="text-muted">Be more specific with product names. Make sure its
                                 unique.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Product Price <small class="text-muted">(cost/item)</small>
                             </label>
-                            <input type="number" class="form-control" name="" value="" placeholder="Enter cost of product per item..." required>
+                            <input type="number" class="form-control" name="price" id="price" value="" placeholder="Enter cost of product per item..." required>
                         </div>
                         <div class="form-group">
                             <label for="">Product Stock
                                 <small>(Quantity)</small>
                             </label>
-                            <input type="number" class="form-control" name="" value="" placeholder="Enter number of items..." required>
+                            <input type="number" class="form-control" name="quantity" id="quantity" value="" placeholder="Enter number of items..." required>
                             <small class="text-muted">This will be used as product quantity in stock keeping
                                 unit.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Description <small class="text-muted">(Optional)</small></label>
-                            <textarea name="name" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
+                            <textarea name="description" id="description" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
                         </div>
 
                         <small class="text-muted"><em>Please double check information before
@@ -249,8 +212,14 @@ include '../includes/pageHeader.php';
                         <input type="submit" class="btn btn-primary" value="Add Product">
                     </div>
                 </form>
-            </div>
+               
         </div>
+        <?php
+// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
+
+include '../includes/alertMessage.php'; 
+
+?>
     </div>
 
     <!-- Add Staff Test-->

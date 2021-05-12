@@ -9,9 +9,9 @@ include 'connection.php';
 $sql= "DELETE FROM Items
       WHERE  Item_ID = '$_GET[Item_ID]'";
 
-
+echo "'$_GET[Item_ID]'";
 if ($conn->query($sql) === TRUE) {
-    header('Location: .././public/admin/deleteArt.php?message=Art ' . $_GET['name'] . ' Successufully Deleted!');
+    header('Location: ../src/products.php?message=Shoes ' . $_GET['name'] . ' Successufully Deleted!');
     
 } else {
 echo "Error: " . $sql . "<br>" . $conn->error;

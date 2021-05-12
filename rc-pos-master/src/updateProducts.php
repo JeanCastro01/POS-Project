@@ -1,8 +1,3 @@
-<!-- 
- RC-PoS (https://appzaib.com/rc-pos)
- Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
- Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,101 +44,73 @@
                             <span aria-hidden="true">×</span>
                         </button>
                 </div>
-                <form class="">
-                    <div class="modal-body">
+                               <form class="" method="POST" action="../includes/insertNewProduct.php">
+
+                   <div class="modal-body">
+
+                   <div class="form-group">
+                   <label class="form-label" for="customFile">Default file input example</label>
+                        <input type="file" class="form-control" id="customFile" />
+                        </div>
+
                         <div class="form-group">
-                            <label>Product Type</label>
-                            <select class="form-control text-primary" required>
-                                    <option disabled selected><sub>Please select a product type</sub></option>
-                                    <option>athletic shoes</option>
-                                    <option>climbing shoes</option>
-                                    <option>cycling shoes</option>
-                                    <option>dress shoes</option>
-                                    <option>golf shoes</option>
-                                    <option>high heels</option>
-                                    <option>running shoes</option>
-                                    <option>skate shoes</option>
-                                    <option>platform shoes</option>
-                                </select>
+                        <label for="">Type</label>
+                            <input type="text" class="form-control" name="type" id="type" value="" placeholder="Enter type..." required>
+                        </div>
+                        <div class="form-group">
+                        <label for="">Brand</label>
+                            <input type="text" class="form-control" name="brand" id="brand" value="" placeholder="Enter brand..." required>
+                        </div>
+                        <div class="form-group">
+                        <label for="">Colour</label>
+                            <input type="text" class="form-control" name="colour" id="colour" value="" placeholder="Enter colour..." required>
+           
 
                         </div>
                         <div class="form-group">
-                            <label>Product Brand</label>
-                            <select class="form-control text-primary" required>
-                                    <option disabled selected><sub>Please select a product brand</sub></option>
-                                    <option>Nike</option>
-                                    <option>adidas</option>
-                                    <option>New Balance</option>
-                                    <option>ASICS</option>
-                                    <option>PUMA</option>
-                                    <option>Skechers</option>
-                                    <option>Fila</option>
-                                    <option>Converse</option>
-                                </select>
-
+                            <label for="">Size</label>
+                            <input type="number" class="form-control" name="size" id="size" value="" placeholder="Enter shoes size..." required>
                         </div>
-                        <div class="form-group">
-                            <label>Color</label>
-                            <select class="form-control text-primary" required>
-                                    <option disabled selected><sub>Please select a Color </sub></option>
-                                    <option>Blue</option>
-                                    <option>Green</option>
-                                    <option>Black</option>
-                                    <option>Yellow</option>
-                                    <option>White</option>
-                                    <option>Red</option>
-                                </select>
 
-                        </div>
-                        <div class="form-group">
-                            <label>Size</label>
-                            <select class="form-control text-primary" required>
-                                    <option disabled selected><sub>Please select a Size </sub></option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                </select>
-
-                        </div>
+                       
                         <div class="form-group">
                             <label for="">Product Name</label>
-                            <input type="text" class="form-control" name="" value="" placeholder="Enter product name..." required>
+                            <input type="text" class="form-control" name="name" id="name" value="" placeholder="Enter product name..." required>
                             <small class="text-muted">Be more specific with product names. Make sure its
-                                    unique.</small>
+                                unique.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Product Price <small class="text-muted">(cost/item)</small>
-                                </label>
-                            <input type="number" class="form-control" name="" value="" placeholder="Enter cost of product per item..." required>
+                            </label>
+                            <input type="number" class="form-control" name="price" id="price" value="" placeholder="Enter cost of product per item..." required>
                         </div>
                         <div class="form-group">
                             <label for="">Product Stock
-                                    <small>(Quantity)</small>
-                                </label>
-                            <input type="number" class="form-control" name="" value="" placeholder="Enter number of items..." required>
+                                <small>(Quantity)</small>
+                            </label>
+                            <input type="number" class="form-control" name="quantity" id="quantity" value="" placeholder="Enter number of items..." required>
                             <small class="text-muted">This will be used as product quantity in stock keeping
-                                    unit.</small>
+                                unit.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Description <small class="text-muted">(Optional)</small></label>
-                            <textarea name="name" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
+                            <textarea name="description" id="description" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
                         </div>
 
                         <small class="text-muted"><em>Please double check information before
-                                    submitting.</em></small>
+                                submitting.</em></small>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="nav-link" href="../src/newSale.php"> <input type="submit" class="btn btn-primary" value="Update"></a>
+                        <input type="submit" class="btn btn-primary" value="Add Product">
                     </div>
                 </form>
-            </div>
+                <?php
+// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
+
+include '../includes/alertMessage.php'; 
+
+?>
         </div>
     </div>
     </div>

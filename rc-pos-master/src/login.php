@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>RC-POS - Login</title>
-    <link href="src/css/bootstrap.css" rel="stylesheet">
-    <link href="src/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="src/css/styles.css" rel="stylesheet">
+    <link href="../src/css/bootstrap.css" rel="stylesheet">
+    <link href="../src/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="../src/css/styles.css" rel="stylesheet">
   </head>
   <body class="bg-dark">
     <div class="container">
@@ -18,7 +18,7 @@
         <div id="login" class="card-body">
 
         
-        <form method="post" action=""> <!--sends information to loginValidator-->
+        <form method="post" action="../includes/loginValidator.php"> <!--sends information to loginValidator-->
         <div class="form-group">
           
         <?php
@@ -41,17 +41,17 @@
 
 
          
-            <a class="btn btn-primary btn-block" href="index.html">Login</a>
+            <a class="btn btn-primary btn-block" href="index.php">Login</a>
           </form>
           <div class="text-center">
             <br>
-            <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+            <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
           </div>
         </div>
       </div>
     </div>
-    <script src="src/js/jquery.min.js"></script>
-    <script src="src/js/bootstrap.bundle.min.js"></script>
-    <script src="src/js/jquery.easing.min.js"></script>
+    <script src="../src/js/jquery.min.js"></script>
+    <script src="../src/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/js/jquery.easing.min.js"></script>
   </body>
 </html>

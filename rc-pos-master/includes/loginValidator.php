@@ -33,7 +33,7 @@ if ($count > 0) {
   $permission = 
    $_SESSION['login_user'] = $row['username'];
    $_SESSION['token'] = "staff";
-    //header('Location:.././public/admin/adminMenu.php');
+    header('Location:../src/index.php');
     exit();
 } 
 
