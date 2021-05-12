@@ -24,160 +24,68 @@ include '../includes/pageHeader.php';
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Description</th>
-                                        <th>Transaction Type</th>
-                                        <th>Amount</th>
-                                        <th>Date</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Description</th>
-                                        <th>Transaction Type</th>
-                                        <th>Amount</th>
-                                        <th>Date</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Sold A4-Tech Mouse A20</td>
-                                        <td>Income</td>
-                                        <td>Rs680</td>
-                                        <td>06/10/2018</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+<!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>                        
+<?php                        
+
+
+include("../includes/connection.php");
+
+$sql = "SELECT * FROM Items
+inner join SalesHistory on Items.Item_ID=SalesHistory.idSale";
+
+  $result = $conn->query($sql);
+
+  $nRows = $result->num_rows;
+
+  if($nRows >0){
+
+    while($row = $result->fetch_assoc()){
+      $data[]=$row;
+    }
+   
+  }   echo "
+  <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+  <thead>
+  <tr>
+
+  <th>Photo</th>
+  <th>Product Name</th>
+  <th>Product Type</th>
+  <th>Brand</th>
+  <th>Cost/item</th>
+  <th>Colour</th>
+  <th>Size</th>
+  <th>Date</th>
+  </tr>
+</thead>
+        
+        ";
+
+        foreach($data as $row){
+        
+      echo "
+        <tr>
+        </td>
+        <td>" . $row["image"] . "</td>
+        <td>" . $row["name"] . "</td>
+        <td>" . $row["type"] . "</td>
+        <td>" . $row["brand"] . "</td>
+        <td>" . $row["price"] . "</td>
+        <td>" . $row["colour"] . "</td>
+        <td>" . $row["size"] . "</td>
+        <td>" . $row["date"] . "</td>";
+  
+    }
+    echo "</table>";
+ 
+  
+  ?>
+<!----------------------------------------------------------------------------------------------------------------------------->
                     </div>
                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div>
             </div>
             <br><br><br>
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto ">
-                        <br><br><br>
-                        <small class="text-muted">
-                            You're using v1.0 of this software. <a href="#"> <i class="fa fa-external-link"></i> Check
-                                for Updates</a>. In order to report a bug, please create an issue <a
-                                href="https://github.com/vruqa/rc-pos/issues">here.</a>
-                            <br><br><br>
-                            <a href="#">Legal</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a
-                                href="#">Advertisements</a>
-                        </small>
-                        <br><br><br>
-                        <span>Copyright &copy; 2013-2018 <a href="#">Blackrock Digital, LLC.</a>, 2018 <a
-                                href="https://vruqa.github.io">Vruqa Designs</a>, 2018 <a
-                                href="https://appzaib.github.io">Appzaib</a>. All rights reserved.</span>
-                        <br><br><br>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <!-- Scroll to Top Button-->

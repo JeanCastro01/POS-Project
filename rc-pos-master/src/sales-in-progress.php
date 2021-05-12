@@ -24,16 +24,14 @@ include '../includes/pageHeader.php';
                         <div class="table-responsive col-md-08 bg-light text-center">
                             
  <!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>                        
- <?php
-
-                            
+ <?php                        
 
 
 include("../includes/connection.php");
 
-  $sql = "SELECT * FROM Items
-  inner join SalesHistory on Items.Item_ID=SalesHistory.idSale";
-  
+$sql = "SELECT * FROM Items
+inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
+
   $result = $conn->query($sql);
 
   $nRows = $result->num_rows;
