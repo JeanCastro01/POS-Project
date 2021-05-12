@@ -37,6 +37,10 @@ if ($count > 0) {
     exit();
 } 
 
+header('Location:../src/login.php?userInvalid='.$username);
+
+exit();
+
 mysqli_close($connection);
 }
  
