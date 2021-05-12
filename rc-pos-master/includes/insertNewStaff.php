@@ -20,9 +20,9 @@ VALUES ( '$username', '$password', '$fname', '$lname' , '$role')";
 
 if ($conn->query($sql) === TRUE) {
    
-    header('Location: .././public/admin/newAdmin.php?message=New Staff ' . $_POST['username'] . ' Successufully Created!');
+    header('Location: ../src/staff.php?message=New Staff ' . $_POST['username'] . ' Successufully Created!');
 } else {
-//cho "Error: " . $sql . "<br>" . $conn->error;
+
 echo "<script type='text/javascript'>alert('username is already being used. Please choose something else!')</script>";
 }
 // -------------------------------------------------------------------------------------------------------------------------------------->

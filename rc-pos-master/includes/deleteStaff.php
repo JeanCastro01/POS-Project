@@ -11,7 +11,7 @@ $sql= "DELETE FROM Staff
 
 
 if ($conn->query($sql) === TRUE) {
-    header('Location: .././public/admin/deleteAdmin.php?message=Admin ' . $_GET['username'] . ' Successufully Deleted!');
+    header('Location: ../src/staff.php?message=Staff ' . $_GET['username'] . ' Successufully Deleted!');
     
 } else {
 echo "Error: " . $sql . "<br>" . $conn->error;
