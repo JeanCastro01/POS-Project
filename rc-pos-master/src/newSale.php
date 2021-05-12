@@ -26,82 +26,69 @@ include '../includes/pageHeader.php';
                     </div>
                     <div class="card-body">
                         <div class="table-responsive col-md-09 bg-light text-center">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                     
+<!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>                        
+    <?php
 
-                                <thead>
-                                    <tr>
-                                        <th>Select</th>
-                                        <th>Photo</th>
-                                        <th>Product Name</th>
-                                        <th>Product Type</th>
-                                        <th>Brand</th>
-                                        <th>In-stock</th>
-                                        <th>Cost/item</th>
-                                        <th>Colour</th>
-                                        <th>Size</th>
-                                       
+                            
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
 
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>#</td>
-                                        <td>Mouse &amp; Pointing Devices</td>
-                                        <td>Runners</td>
-                                        <td>Nike</td>
-                                        <td>6</td>
-                                        <td>85</td>
-                                        <td>Orange</td>
-                                        <td>40</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
+include("../includes/connection.php");
 
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>#</td>
-                                        <td>Mouse &amp; Pointing Devices</td>
-                                        <td>Boots</td>
-                                        <td>Adidas</td>
-                                        <td>10</td>
-                                        <td>55</td>
-                                        <td>Blue</td>
-                                        <td>38</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
+  $sql = "SELECT Item_ID, description, image,  name, type, brand, quantity, price, colour, size FROM Items";
+  $result = $conn->query($sql);
 
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>#</td>
-                                        <td>Mouse &amp; Pointing Devices</td>
-                                        <td>Dress Shoes</td>
-                                        <td>Tommy Hilfiger</td>
-                                        <td>3</td>
-                                        <td>120</td>
-                                        <td>Black</td>
-                                        <td>42</td>
-                                    </tr>
+  $nRows = $result->num_rows;
 
-                                </tbody>
-                            </table>
+  if($nRows >0){
+
+    while($row = $result->fetch_assoc()){
+      $data[]=$row;
+    }
+   
+  }   echo "
+  <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+  <thead>
+  <tr>
+  <th>Select</th>
+  <th>Photo</th>
+  <th>Product Name</th>
+  <th>Product Type</th>
+  <th>Brand</th>
+  <th>In-stock</th>
+  <th>Cost/item</th>
+  <th>Colour</th>
+  <th>Size</th>
+  </tr>
+</thead>
+        
+        ";
+
+        foreach($data as $row){
+        
+      echo "
+        <tr>
+        <td>
+        <div class='form-check'>
+        <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault'>
+        <label class='form-check-label' for='flexCheckDefault'>
+        </label>
+        </div>
+        </td>
+        <td>" . $row["image"] . "</td>
+        <td>" . $row["name"] . "</td>
+        <td>" . $row["type"] . "</td>
+        <td>" . $row["brand"] . "</td>
+        <td>" . $row["quantity"] . "</td>
+        <td>" . $row["price"] . "</td>
+        <td>" . $row["colour"] . "</td>
+        <td>" . $row["size"] . "</td>";
+  
+    }
+    echo "</table>";
+ 
+  ?>
+<!----------------------------------------------------------------------------------------------------------------------------->
                             
                         </div>
                         <a href="proceed.html"> <button type="button" style="float: right;" class="btn btn-danger">

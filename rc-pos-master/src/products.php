@@ -37,111 +37,78 @@ include '../includes/pageHeader.php';
                                 <option value="100">100</option>
 
                             </select>
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                           
 
-                                <thead>
-                                    <tr>
-                                        <th>Select</th>
-                                        <th>Photo</th>
-                                        <th>Product Name</th>
-                                        <th>Product Type</th>
-                                        <th>Brand</th>
-                                        <th>In-stock</th>
-                                        <th>Cost/item</th>
-                                        <th>Colour</th>
-                                        <th>Size</th>
-                                        <th>Action</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
 
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>#</td>
-                                        <td>Mouse &amp; Pointing Devices</td>
-                                        <td>Runners</td>
-                                        <td>Nike</td>
-                                        <td>6</td>
-                                        <td>85</td>
-                                        <td>Orange</td>
-                                        <td>40</td>
-                                        <td>
-                                            <li class="list-inline-item">
-                                                <a href="updateProducts.html"> <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i> </a></button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></button>
-                                            </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
+<!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>                        
+    <?php
 
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>#</td>
-                                        <td>Mouse &amp; Pointing Devices</td>
-                                        <td>Boots</td>
-                                        <td>Adidas</td>
-                                        <td>10</td>
-                                        <td>55</td>
-                                        <td>Blue</td>
-                                        <td>38</td>
-                                        <td>
-                                            <li class="list-inline-item">
-                                                <a href="updateProducts.html"> <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i></a></button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></button>
-                                            </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
+                            
 
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>#</td>
-                                        <td>Mouse &amp; Pointing Devices</td>
-                                        <td>Dress Shoes</td>
-                                        <td>Tommy Hilfiger</td>
-                                        <td>3</td>
-                                        <td>120</td>
-                                        <td>Black</td>
-                                        <td>42</td>
-                                        <td>
-                                            <li class="list-inline-item">
-                                                <a href="updateProducts.html"> <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                    class="fa fa-edit"></i></a></button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                                    class="fa fa-trash"></i></button>
-                                            </li>
-                                        </td>
-                                    </tr>
 
-                                </tbody>
-                            </table>
+  include("../includes/connection.php");
+
+    $sql = "SELECT Item_ID, description, image,  name, type, brand, quantity, price, colour, size FROM Items";
+    $result = $conn->query($sql);
+
+    $nRows = $result->num_rows;
+
+    if($nRows >0){
+
+      while($row = $result->fetch_assoc()){
+        $data[]=$row;
+      }
+     
+    }
+      echo "
+      <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+      <thead>
+      <tr>
+      <th>Photo</th>
+      <th>Product Name</th>
+      <th>Product Type</th>
+      <th>Brand</th>
+      <th>In-stock</th>
+      <th>Cost/item</th>
+      <th>Colour</th>
+      <th>Size</th>
+      <th>Action</th>
+      </tr>
+  </thead>
+          
+          ";
+
+          foreach($data as $row){
+          
+        echo "
+          <tr>
+          <td>" . $row["image"] . "</td>
+          <td>" . $row["name"] . "</td>
+          <td>" . $row["type"] . "</td>
+          <td>" . $row["brand"] . "</td>
+          <td>" . $row["quantity"] . "</td>
+          <td>" . $row["price"] . "</td>
+          <td>" . $row["colour"] . "</td>
+          <td>" . $row["size"] . "</td>
+          <td> <a href='updateProducts.php?image={$row['image']}&name={$row['name']}&type={$row['type']}
+          &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
+          class='fa fa-edit'></i> </a></button></a>
+          <a href='updateProducts.php?image={$row['image']}&name={$row['name']}&type={$row['type']}
+          &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
+          class='fa fa-trash'></i> </a></button></a>
+          </td>";
+    
+      }
+      echo "</table>";
+   
+    ?>
+
+
+    
+<!----------------------------------------------------------------------------------------------------------------------------->
+                           
+                         
 
                         </div>
                     </div>

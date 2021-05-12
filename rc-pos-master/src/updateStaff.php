@@ -27,7 +27,7 @@
         <ul class="sidebar navbar-nav active">
 
             <li class="nav-item">
-                <a class="nav-link" href="../src/staff.html">
+                <a class="nav-link" href="../src/staff.php">
                     <i class="fa fa-chevron-circle-left"></i>
                     <span>Back</span>
                 </a>

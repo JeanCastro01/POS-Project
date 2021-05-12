@@ -22,30 +22,62 @@ include '../includes/pageHeader.php';
                     </div>
                     <div class="card-body">
                         <div class="table-responsive text-center">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Role</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
 
-                                <tbody id="list-props">
-                                   
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-            <br><br><br>
-            
-        </div>
-    </div>
+
+
+
+
+<!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>
+<?php
+  include("../includes/connection.php");
+
+    $sql = "SELECT fname, lname,  role, username, password FROM Staff";
+    $result = $conn->query($sql);
+
+    $nRows = $result->num_rows;
+
+    if($nRows >0){
+
+      while($row = $result->fetch_assoc()){
+        $data[]=$row;
+      }
+     
+    }
+      echo "
+      <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+      <thead>
+      <tr>
+          <th>Username</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Role</th>
+          <th>Action</th>
+      </tr>
+  </thead>
+          
+          ";
+
+          foreach($data as $row){
+
+        echo "
+          <tr>
+          <td>" . $row["username"] . "</td>
+          <td>" . $row["fname"] . "</td>
+          <td>" . $row["lname"] . "</td>
+          <td>" . $row["role"] . "</td>
+          <td> <a href='updateStaff.php?username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
+          &role={$row['role']}&password={$row['password']}'><i class='fa fa-edit'></i> </a>
+          <a href='updateStaff.php?username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
+          &role={$row['role']}&password={$row['password']}'><i class='fa fa-trash'></i> </a>
+          </td>";
+          
+    
+      }
+      echo "</table>";
+   
+    ?>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fa fa-angle-up"></i>
