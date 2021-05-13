@@ -44,57 +44,62 @@
                             <span aria-hidden="true">×</span>
                         </button>
                 </div>
-                               <form class="" method="POST" action="../includes/insertNewProduct.php">
+                               <form class="" method="POST" action="../includes/updateProduct.php">
 
                    <div class="modal-body">
 
+                   <div class="form-group" hidden>
+                        <label for="">ID</label>
+                            <input type="text" class="form-control" name="Item_ID" id="type"  value= <?php echo $_GET['Item_ID']; ?>>
+                        </div>
+
                    <div class="form-group">
                    <label class="form-label" for="customFile">Default file input example</label>
-                        <input type="file" class="form-control" id="customFile" />
+                   <input type="file" class="form-control" id="image" name="image" />
                         </div>
 
                         <div class="form-group">
                         <label for="">Type</label>
-                            <input type="text" class="form-control" name="type" id="type" value="" placeholder="Enter type..." required>
+                            <input type="text" class="form-control" name="type" id="type"value= <?php echo $_GET['type']; ?>>
                         </div>
                         <div class="form-group">
                         <label for="">Brand</label>
-                            <input type="text" class="form-control" name="brand" id="brand" value="" placeholder="Enter brand..." required>
+                            <input type="text" class="form-control" name="brand" id="brand"  value= <?php echo $_GET['brand']; ?>>
                         </div>
                         <div class="form-group">
                         <label for="">Colour</label>
-                            <input type="text" class="form-control" name="colour" id="colour" value="" placeholder="Enter colour..." required>
+                            <input type="text" class="form-control" name="colour" id="colour" value= <?php echo $_GET['colour']; ?>>
            
 
                         </div>
                         <div class="form-group">
                             <label for="">Size</label>
-                            <input type="number" class="form-control" name="size" id="size" value="" placeholder="Enter shoes size..." required>
+                            <input type="number" class="form-control" name="size" id="size"  value= <?php echo $_GET['size']; ?>>
                         </div>
 
                        
                         <div class="form-group">
                             <label for="">Product Name</label>
-                            <input type="text" class="form-control" name="name" id="name" value="" placeholder="Enter product name..." required>
+                            <input type="text" class="form-control" name="name" id="name"  value= <?php echo $_GET['name']; ?>>
                             <small class="text-muted">Be more specific with product names. Make sure its
                                 unique.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Product Price <small class="text-muted">(cost/item)</small>
                             </label>
-                            <input type="number" class="form-control" name="price" id="price" value="" placeholder="Enter cost of product per item..." required>
+                            <input type="number" class="form-control" name="price" id="price" value= <?php echo $_GET['price']; ?>>
                         </div>
                         <div class="form-group">
                             <label for="">Product Stock
                                 <small>(Quantity)</small>
                             </label>
-                            <input type="number" class="form-control" name="quantity" id="quantity" value="" placeholder="Enter number of items..." required>
+                            <input type="number" class="form-control" name="quantity" id="quantity" value= <?php echo $_GET['quantity']; ?>>
                             <small class="text-muted">This will be used as product quantity in stock keeping
                                 unit.</small>
                         </div>
                         <div class="form-group">
                             <label for="">Description <small class="text-muted">(Optional)</small></label>
-                            <textarea name="description" id="description" class="form-control" cols="80" placeholder="Add some note or description about this product..."></textarea>
+                            <textarea name="description" id="description" class="form-control" cols="80" ></textarea>
                         </div>
 
                         <small class="text-muted"><em>Please double check information before
@@ -102,7 +107,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <input type="submit" class="btn btn-primary" value="Add Product">
+                        <input type="submit" class="btn btn-primary" value="Update Product">
                     </div>
                 </form>
                 <?php

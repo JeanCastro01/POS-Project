@@ -93,8 +93,8 @@ include '../includes/pageHeader.php';
           <td>" . $row["price"] . "</td>
           <td>" . $row["colour"] . "</td>
           <td>" . $row["size"] . "</td>
-          <td> <a href='updateProducts.php?name={$row['name']}&type={$row['type']}
-          &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
+          <td> <a href='updateProducts.php?Item_ID={$row['Item_ID']}&name={$row['name']}&type={$row['type']}
+          &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}&description={$row['description']}'><i
           class='fa fa-edit'></i> </a>
           <a href='../includes/deleteProduct.php?Item_ID{$row['Item_ID']}&=name={$row['name']}&type={$row['type']}
           &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
