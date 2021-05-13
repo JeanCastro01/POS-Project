@@ -26,20 +26,35 @@ include '../includes/pageHeader.php';
             <div class="card-body">
 
                 <!-- -- Navbar Search -->
-                <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                    <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success " type="submit">Search</button>
-                </form>
-                <div class="table-responsive col-md-08 bg-light text-center">
+                <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="POST"
+                    action="">
 
+                    <label class="form-control " for="name"><b>Customer Email</b></label>
+                    <input class="form-control " type="text" name="email" placeholder="Search by Customer email">
+                    <button class="btn btn-outline-success " type="submit">Search</button>
+
+                </form>
+                <div class="table-responsive col-md-09 bg-light text-center">
                     <!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>
-                    <?php                        
+                    <?php
+
+                            
 
 
 include("../includes/connection.php");
 
-$sql = "SELECT * FROM Items
+$email = $_POST['email'] ?? "";
+
+
+if(!$email ==""){
+    $sql = "SELECT * FROM Items
+inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID WHERE cust_email LIKE '%$email%'";
+}
+
+else{
+    $sql = "SELECT * FROM Items
 inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
+}
 
   $result = $conn->query($sql);
 
@@ -64,6 +79,7 @@ inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
   <th>Cost/item</th>
   <th>Colour</th>
   <th>Size</th>
+  <th>Customer email</th>
   </tr>
 </thead>
         
@@ -87,7 +103,8 @@ inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
         <td>" . $row["quantity"] . "</td>
         <td>" . $row["price"] . "</td>
         <td>" . $row["colour"] . "</td>
-        <td>" . $row["size"] . "</td>";
+        <td>" . $row["size"] . "</td>
+        <td>" . $row["cust_email"] . "</td>";
   
     }
     echo "</table>";

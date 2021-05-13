@@ -144,7 +144,7 @@
             <script src="../src/js/chart.min.js"></script>
             <script src="../src/js/rc-pos.min.js"></script>
             <script src="../src/js/chart-area-demo.js"></script>
-            <script src="../src/js/shoppingCart.js"></script>
+               <script src="../src/js/shoppingCart.js"></script>
     </body>
 
 </html>

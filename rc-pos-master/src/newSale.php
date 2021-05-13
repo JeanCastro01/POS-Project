@@ -27,8 +27,18 @@ include '../includes/pageHeader.php';
             <div class="card-body">
 
                 <!-- -- Navbar Search -->
-                <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                    <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="POST"
+                    action="">
+
+                    <label class="form-control " for="name"><b>Product Name</b></label>
+                    <input class="form-control " type="text" name="name" placeholder="Search by Product Name">
+
+                    <label class="form-control " for="type"><b>Type</b></label>
+                    <input class="form-control " type="text" name="type" placeholder="Search by Product Type">
+
+                    <label class="form-control " for="brand"><b>Brand</b></label>
+                    <input class="form-control " type="text" name="brand" placeholder="Search by Product Brand">
+
                     <button class="btn btn-outline-success " type="submit">Search</button>
                 </form>
                 <div class="table-responsive col-md-09 bg-light text-center">
@@ -43,7 +53,26 @@ include '../includes/pageHeader.php';
 
 include("../includes/connection.php");
 
-  $sql = "SELECT Item_ID, description, image,  name, type, brand, quantity, price, colour, size FROM Items";
+$name = $_POST['name'] ?? "";
+$type = $_POST['type'] ?? "";
+$brand = $_POST['brand'] ?? "";
+
+if(!$name ==""){
+    $sql = "SELECT * FROM Items WHERE name LIKE '%$name%'";
+}
+elseif(!$type ==""){
+    $sql = "SELECT * FROM Items WHERE type LIKE '%$type%'";
+}
+elseif(!$brand ==""){
+    $sql = "SELECT * FROM Items WHERE brand LIKE '%$brand%'";
+}
+
+else{
+    $sql = "SELECT * FROM Items";
+}
+
+
+ 
   $result = $conn->query($sql);
 
   $nRows = $result->num_rows;
@@ -102,11 +131,10 @@ include("../includes/connection.php");
                 <a href="proceed.php"> <button type="button" style="float: right;" class="btn btn-danger">
                         Proceed</button></a>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+
         </div>
+
     </div>
-    <br><br><br>
-</div>
 </div>
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
