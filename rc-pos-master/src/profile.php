@@ -91,10 +91,10 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <div class="dropdown-header">Rao Ahmed</div>
-                        <a class="dropdown-item" href="profile.html"> <i class="fa fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="profile.php"> <i class="fa fa-user"></i> Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"> <i class="fa fa-cog"></i> Settings</a>
-                        <a class="dropdown-item" href="history.html"> <i class="fa fa-line-chart"></i> Activity Log</a>
+                        <a class="dropdown-item" href="history.php"> <i class="fa fa-line-chart"></i> Activity Log</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i
                                 class="fa fa-power-off"></i> Logout</a>
@@ -241,7 +241,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-danger" href="login.html">Logout</a>
+                        <a class="btn btn-danger" href="login.php">Logout</a>
                     </div>
                 </div>
             </div>
