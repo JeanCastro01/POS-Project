@@ -60,7 +60,7 @@
             </ul>
 
             <!-- Page Content -->
-            <!-- DataTables Example -->
+            <!-- DataTables -->
 
             <div class="basket">
 
@@ -72,6 +72,8 @@
                         <li class="subtotal">Subtotal</li>
                     </ul>
                 </div>
+
+                
                 <div class="basket-product">
                     <div class="item">
                         <div class="product-image">
