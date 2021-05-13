@@ -67,8 +67,7 @@ include '../includes/pageHeader.php';
           <td>" . $row["role"] . "</td>
           <td> <a href='updateStaff.php?Staff_ID={$row['Staff_ID']}&username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
           &role={$row['role']}&password={$row['password']}'><i class='fa fa-edit'></i></a>
-          <a href='../includes/deleteStaff.php?username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
-          &role={$row['role']}&password={$row['password']}'><i class='fa fa-trash'></i></a>
+          <a href='../includes/deleteStaff.php?username={$row['username']}'><i class='fa fa-trash'></i></a>
           </td>";
           
     

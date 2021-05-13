@@ -19,8 +19,17 @@ include '../includes/pageHeader.php';
                 <div class="card mb-3">
                     <div class="card-header bg-primary text-white">
                         <i class="fa fa-table"></i> Sales in Progress
+                       
                     </div>
+
+        
                     <div class="card-body">
+
+                                <!-- -- Navbar Search -->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">     
+    <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success " type="submit">Search</button>
+  </form>
                         <div class="table-responsive col-md-08 bg-light text-center">
                             
  <!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>                        

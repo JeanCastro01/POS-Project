@@ -398,3 +398,7 @@ body.sidebar-toggled footer.sticky-footer {
     background-color: red;
     cursor: pointer;
 }
+
+.form-control mr-sm-2{
+    float: right;
+}

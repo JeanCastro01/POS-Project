@@ -25,7 +25,15 @@ include '../includes/pageHeader.php';
                         </a>
                     </div>
                     <div class="card-body">
+
+<!-- -- Navbar Search -->
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">     
+    <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success " type="submit">Search</button>
+  </form>
                         <div class="table-responsive col-md-09 bg-light text-center">
+
+                                                   
                      
 <!------------------------------------- Accessing the Database to populate my Table ------------------------------------------------------>                        
     <?php
@@ -91,7 +99,7 @@ include("../includes/connection.php");
 <!----------------------------------------------------------------------------------------------------------------------------->
                             
                         </div>
-                        <a href="proceed.html"> <button type="button" style="float: right;" class="btn btn-danger">
+                        <a href="proceed.php"> <button type="button" style="float: right;" class="btn btn-danger">
                             Proceed</button></a>
                     </div>
                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>

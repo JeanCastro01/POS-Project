@@ -84,7 +84,6 @@ include '../includes/pageHeader.php';
         echo "
           <tr>
          
-          
           <td>".'<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>'."</td>
           <td>" . $row["name"] . "</td>
           <td>" . $row["type"] . "</td>
@@ -96,9 +95,7 @@ include '../includes/pageHeader.php';
           <td> <a href='updateProducts.php?Item_ID={$row['Item_ID']}&name={$row['name']}&type={$row['type']}
           &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}&description={$row['description']}'><i
           class='fa fa-edit'></i> </a>
-          <a href='../includes/deleteProduct.php?Item_ID{$row['Item_ID']}&=name={$row['name']}&type={$row['type']}
-          &brand={$row['brand']}&quantity={$row['quantity']}&price={$row['price']}&colour={$row['colour']}&size={$row['size']}'><i
-          class='fa fa-trash'></i></a>
+          <a href='../includes/deleteProductTest.php?Item_ID{$row['Item_ID']}'><i class='fa fa-trash'></i></a>
           </td>";
     
       }
