@@ -192,6 +192,7 @@ inner join SalesHistory on Items.Item_ID=SalesHistory.idSale";
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
         </div>
     </div>
     <!-- Add Product Staff Test-->
@@ -251,6 +252,7 @@ include '../includes/alertMessage.php';
 include '../includes/alertMessage.php'; 
 
 ?>
+
         </div>
     </div>
 

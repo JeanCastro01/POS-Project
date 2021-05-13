@@ -31,7 +31,7 @@ include '../includes/pageHeader.php';
 <?php
   include("../includes/connection.php");
 
-    $sql = "SELECT fname, lname,  role, username, password FROM Staff";
+    $sql = "SELECT * FROM Staff";
     $result = $conn->query($sql);
 
     $nRows = $result->num_rows;
@@ -65,8 +65,8 @@ include '../includes/pageHeader.php';
           <td>" . $row["fname"] . "</td>
           <td>" . $row["lname"] . "</td>
           <td>" . $row["role"] . "</td>
-          <td> <a href='updateStaff.php?username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
-          &role={$row['role']}&password={$row['password']}'><i class='fa fa-edit'></i> </a>
+          <td> <a href='updateStaff.php?Staff_ID={$row['Staff_ID']}&username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
+          &role={$row['role']}&password={$row['password']}'><i class='fa fa-edit'></i></a>
           <a href='../includes/deleteStaff.php?username={$row['username']}&fname={$row['fname']}&lname={$row['lname']}
           &role={$row['role']}&password={$row['password']}'><i class='fa fa-trash'></i></a>
           </td>";
@@ -185,6 +185,7 @@ include '../includes/alertMessage.php';
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
         </div>
     </div>
 

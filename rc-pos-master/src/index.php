@@ -260,6 +260,7 @@ include '../includes/pageHeader.php';
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
         </div>
     </div>
                 <!-- Add Product Staff Test-->

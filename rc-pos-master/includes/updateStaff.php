@@ -6,13 +6,13 @@ include 'connection.php';
 //------------------------------------------------ Query to SQL -------------------------------------------------------------------------> 
 $fname= $_POST['fname'];
 $lname= $_POST['lname'];
-$userName= $_POST['username'];
+$username= $_POST['username'];
 $role= $_POST['role'];
 $password= $_POST['password'];
-$oldAdmin = $_POST['test'];
+$Staff_ID = $_POST['Staff_ID'];
  
-$sql="UPDATE Staff SET fname='$fname', lname = '$lname', username = '$userName' , role = '$role', password = '$password'
-WHERE username='$oldAdmin'";
+$sql="UPDATE Staff SET fname='$fname', lname = '$lname', username = '$username' , role = '$role', password = '$password'
+WHERE Staff_ID='$Staff_ID'";
 
 // -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ if ($conn->query($sql) === TRUE) {
     //echo $oldAdmin;
     //echo "Error: " . $sql . "<br>" . $conn->error;
     //echo "Error: " . $sql . "<br>" . $conn;
-    header('Location: .././public/admin/listAdmin.php?message=Staff ' . $_POST['username'] . '  Successufully Updated!');
+    header('Location: ../src/staff.php?message=Staff ' . $_POST['Staff_ID'] . '  Successufully Updated!');
     
 } else {
 echo "Error: " . $sql . "<br>" . $conn->error;

@@ -45,41 +45,38 @@
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <form class="">
+                        <form class="" method="POST" action="../includes/updateStaff.php">
                             <div class="modal-body">
+
+
+                            <div class="form-group" hidden>
+                                    <label>Staff ID</label>
+                                        <input type="number" class="form-control" name="Staff_ID" id="Staff_ID"  value= <?php echo $_GET['Staff_ID']; ?> >
+                                </div>
+
                                 <div class="form-group">
                                     <labe>First Name</label>
-                                        <input type="text" class="form-control" name="" value=""
-                                            placeholder="Enter first name here..." required>
-
+                                        <input type="text" class="form-control" name="fname" id="fname" required value= <?php echo $_GET['fname']; ?>>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" class="form-control" name="" value=""
-                                        placeholder="Enter last name here..." required>
-
-                                </div>
+                                    <input type="text" class="form-control"  name="lname" id="lname"  required value= <?php echo $_GET['lname']; ?>>
+                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Role</label>
-                                    <input type="text" class="form-control" name="" value=""
-                                        placeholder="Enter role here..." required>
-
+                                    <input type="text" class="form-control"  name="role" id="role" required value= <?php echo $_GET['role']; ?>>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input type="text" class="form-control" name="" value=""
-                                        placeholder="Enter username here..." required>
-
+                                    <input type="text" class="form-control"  name="username" id="username" required value= <?php echo $_GET['username']; ?>>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" name="" value=""
-                                        placeholder="Enter password here..." required>
-
+                                    <input type="password" class="form-control"  name="password" id="password" required value= <?php echo $_GET['password']; ?>>
                                 </div>
 
                                 <div class="modal-footer">

@@ -293,6 +293,7 @@
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
         </div>
     </div>
 

@@ -189,6 +189,7 @@ include '../includes/pageHeader.php';
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
         </div>
     </div>
 
@@ -248,6 +249,7 @@ include '../includes/alertMessage.php';
 include '../includes/alertMessage.php'; 
 
 ?>
+
                     </div>
                 </div>
 

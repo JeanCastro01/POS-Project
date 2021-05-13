@@ -202,6 +202,7 @@ include("../includes/connection.php");
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
         </div>
     </div>
 

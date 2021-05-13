@@ -220,6 +220,7 @@ include '../includes/alertMessage.php';
 include '../includes/alertMessage.php'; 
 
 ?>
+</div>
     </div>
 
     <!-- Add Staff Test-->
