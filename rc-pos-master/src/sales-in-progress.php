@@ -97,15 +97,11 @@ inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
 <!----------------------------------------------------------------------------------------------------------------------------->
                           
                         </div>
-                        <a href="proceed.html"> <button   type="button" style="float: right;" class="btn btn-danger">
+                        <a href="proceed.php"> <button   type="button" style="float: right;" class="btn btn-danger">
                             Proceed</button></a>
                        
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
+        
             </div>
-            <br><br><br>
-           
         </div>
     </div>
     <!-- Scroll to Top Button-->
