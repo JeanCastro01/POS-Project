@@ -118,12 +118,6 @@
                             <input type="submit" class="btn btn-primary" value="Update Product">
                         </div>
                     </form>
-                    <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
                 </div>
             </div>
         </div>

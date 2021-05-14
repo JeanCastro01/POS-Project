@@ -242,12 +242,7 @@ else{
                     <input type="submit" class="btn btn-primary" value="Add Product">
                 </div>
             </form>
-            <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
+          
         </div>
     </div>
 </div>

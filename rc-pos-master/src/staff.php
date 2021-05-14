@@ -75,13 +75,6 @@ include '../includes/pageHeader.php';
       echo "</table>";
    
     ?>
-                    <!---------------------------------------------------------------------------------------------------------------------------------------------------->
-
-                    <?php
-
-include '../includes/alertMessage.php'; 
-
-?>
                     <!-- Scroll to Top Button-->
                     <a class="scroll-to-top rounded" href="#page-top">
                         <i class="fa fa-angle-up"></i>
@@ -195,12 +188,6 @@ include '../includes/alertMessage.php';
                                         <input type="submit" class="btn btn-primary" value="Add Product">
                                     </div>
                                 </form>
-                                <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
                             </div>
                         </div>
                     </div>
@@ -263,12 +250,6 @@ include '../includes/alertMessage.php';
                                             <button type="submit" class="btn btn-primary"> insert</button>
                                         </div>
                                 </form>
-                                <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
                             </div>
                         </div>
                     </div>

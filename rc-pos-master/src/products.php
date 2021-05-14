@@ -229,12 +229,7 @@ include '../includes/alertMessage.php';
                                 </form>
 
                             </div>
-                            <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
+         
                         </div>
                     </div>
 

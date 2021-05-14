@@ -55,7 +55,7 @@
                     </a>
                 </li>
             </ul>
-            
+
             <!-- Database code to populate content from basket automatically -->
 
             <?php
@@ -150,12 +150,7 @@ inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
     echo "</div>";
  
   ?>
-            <!---------------------------------------------------------------------------------------------------------------------------------------------------->
-            <?php
-
-include '../includes/alertMessage.php'; 
-
-?>
+        
         </div>
         </div>
         </div>

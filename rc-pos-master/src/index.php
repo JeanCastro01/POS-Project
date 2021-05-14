@@ -30,6 +30,7 @@ include '../includes/pageHeader.php';
                         
                         <div class="card-text">
 <!-- Opening connection to database to query and populate projections below -->
+<!-- this was an attempt to connect to the database and count the amount of sales done in the past two weeks -->
   <?php
 // include("../includes/connection.php");
 
@@ -47,7 +48,7 @@ include '../includes/pageHeader.php';
                 <div class="card text-white bg-danger o-hidden h-100">
                     <div class="card-header">
                         <h1>Top-Selling</h1>
-                        <small class="float-left">Speakers</small>
+                        <small class="float-left">Sneakers</small>
                     </div>
                     <div class="card-body">
                         <div class="card-body-icon">
@@ -276,12 +277,7 @@ include '../includes/pageHeader.php';
                             <input type="submit" class="btn btn-primary" value="Add Product">
                         </div>
                     </form>
-                    <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
+                
                 </div>
             </div>
         </div>
@@ -341,12 +337,7 @@ include '../includes/alertMessage.php';
 
                             </div>
                     </form>
-                    <?php
-// ---------------------------Alert Message so Admin knows what has been done------------------------------------------------------->
-
-include '../includes/alertMessage.php'; 
-
-?>
+                 
                 </div>
             </div>
         </div>

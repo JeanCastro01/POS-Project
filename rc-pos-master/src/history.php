@@ -48,7 +48,7 @@ inner join SalesHistory on Items.Item_ID=SalesHistory.idSale";
   <thead>
   <tr>
 
-  <th>Photo</th>
+  
   <th>Product Name</th>
   <th>Product Type</th>
   <th>Brand</th>
@@ -66,14 +66,13 @@ inner join SalesHistory on Items.Item_ID=SalesHistory.idSale";
       echo "
         <tr>
         </td>
-        <td>" . $row["image"] . "</td>
         <td>" . $row["name"] . "</td>
         <td>" . $row["type"] . "</td>
         <td>" . $row["brand"] . "</td>
         <td>" . $row["price"] . "</td>
         <td>" . $row["colour"] . "</td>
         <td>" . $row["size"] . "</td>
-        <td>" . $row["date"] . "</td>";
+        <td>" . $row["Date"] . "</td>";
   
     }
     echo "</table>";
