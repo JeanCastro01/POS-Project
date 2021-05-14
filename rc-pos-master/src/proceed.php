@@ -65,14 +65,8 @@
 
 
  <!-- Database code to populate content from basket automatically -->
-            <div class="basket">
 
-               
-                <?php
-
-                            
-
-
+ <?php
 include("../includes/connection.php");
 
   $sql = "SELECT * FROM Items";
@@ -88,6 +82,7 @@ include("../includes/connection.php");
    
   }
     echo "
+    <div class='basket'>
     <div class='basket-labels'>
     <ul>
         <li class='item item-heading'>Item</li>
@@ -111,7 +106,7 @@ include("../includes/connection.php");
           <img src=".'data:image/jpeg;base64,'.base64_encode( $row['image'] )."'/>
           </div>
           <div class='product-details'>
-              <h1><strong><span class='item-quantity'>{$row['quantity']}</span> {$row['name']}</strong> {$row['description']}
+              <h1><strong><span class='item-quantity'>1</span> {$row['name']}</strong> 
               </h1>
               <p><strong>{$row['colour']}, {$row['size']}</strong></p>
               <p>Product Code - {$row['Item_ID']}</p>
@@ -131,15 +126,13 @@ include("../includes/connection.php");
     echo "</div>";
  
   ?>
- <!---------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-                <?php
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->
+<?php
 
 include '../includes/alertMessage.php'; 
 
 ?>
-              
+
             <aside>
                 <div class="summary">
                     <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>

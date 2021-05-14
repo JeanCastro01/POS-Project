@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-75">
                     <div class="container">
-                        <form action="/action_page.php">
+                        <form action="index.php">
 
                             <div class="row">
                                 <div class="col-50">
@@ -112,7 +112,7 @@
                                 <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as
                                 billing
                             </label>
-                            <input type="submit" value="CLick here to make payment" class="btn">
+                            <input type="submit" value="Click here to make payment" class="btn">
                         </form>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
             <script src="../src/js/chart.min.js"></script>
             <script src="../src/js/rc-pos.min.js"></script>
             <script src="../src/js/chart-area-demo.js"></script>
-               <script src="../src/js/shoppingCart.js"></script>
+            <script src="../src/js/shoppingCart.js"></script>
     </body>
 
 </html>
