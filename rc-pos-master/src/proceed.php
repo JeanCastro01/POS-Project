@@ -62,61 +62,84 @@
             <!-- Page Content -->
             <!-- DataTables -->
 
+
+
+ <!-- Database code to populate content from basket automatically -->
             <div class="basket">
 
-                <div class="basket-labels">
-                    <ul>
-                        <li class="item item-heading">Item</li>
-                        <li class="price">Price</li>
-                        <li class="quantity">Quantity</li>
-                        <li class="subtotal">Subtotal</li>
-                    </ul>
-                </div>
+               
+                <?php
 
-                
-                <div class="basket-product">
-                    <div class="item">
-                        <div class="product-image">
-                            <img src="http://placehold.it/120x166" alt="Placholder Image 2" class="product-frame">
-                        </div>
-                        <div class="product-details">
-                            <h1><strong><span class="item-quantity">4</span> x Eliza J</strong> Lace Sleeve Cuff Dress
-                            </h1>
-                            <p><strong>Navy, Size 18</strong></p>
-                            <p>Product Code - 232321939</p>
-                        </div>
-                    </div>
-                    <div class="price">26.00</div>
-                    <div class="quantity">
-                        <input type="number" value="4" min="1" class="quantity-field">
-                    </div>
-                    <div class="subtotal">104.00</div>
-                    <div class="remove">
-                        <button>Remove</button>
-                    </div>
-                </div>
-                <div class="basket-product">
-                    <div class="item">
-                        <div class="product-image">
-                            <img src="http://placehold.it/120x166" alt="Placholder Image 2" class="product-frame">
-                        </div>
-                        <div class="product-details">
-                            <h1><strong><span class="item-quantity">1</span> x Whistles</strong> Amella Lace Midi Dress
-                            </h1>
-                            <p><strong>Navy, Size 10</strong></p>
-                            <p>Product Code - 232321939</p>
-                        </div>
-                    </div>
-                    <div class="price">26.00</div>
-                    <div class="quantity">
-                        <input type="number" value="1" min="1" class="quantity-field">
-                    </div>
-                    <div class="subtotal">26.00</div>
-                    <div class="remove">
-                        <button>Remove</button>
-                    </div>
-                </div>
-            </div>
+                            
+
+
+include("../includes/connection.php");
+
+  $sql = "SELECT * FROM Items";
+  $result = $conn->query($sql);
+
+  $nRows = $result->num_rows;
+
+  if($nRows >0){
+
+    while($row = $result->fetch_assoc()){
+      $data[]=$row;
+    }
+   
+  }
+    echo "
+    <div class='basket-labels'>
+    <ul>
+        <li class='item item-heading'>Item</li>
+        <li class='price'>Price</li>
+        <li class='quantity'>Quantity</li>
+        <li class='subtotal'>Subtotal</li>
+    </ul>
+</div>
+        
+        ";
+
+        foreach($data as $row){
+        
+      echo "
+
+
+      <div class='basket-product'>
+      <div class='item'>
+          <div class='product-image'>
+          
+          <img src=".'data:image/jpeg;base64,'.base64_encode( $row['image'] )."'/>
+          </div>
+          <div class='product-details'>
+              <h1><strong><span class='item-quantity'>{$row['quantity']}</span> {$row['name']}</strong> {$row['description']}
+              </h1>
+              <p><strong>{$row['colour']}, {$row['size']}</strong></p>
+              <p>Product Code - {$row['Item_ID']}</p>
+          </div>
+      </div>
+      <div class='price'>{$row['price']}</div>
+      <div class='quantity'>
+          <input type='number' value='1' min='1' class='quantity-field'>
+      </div>
+      <div class='subtotal'>{$row['price']}</div>
+      <div class='remove'>
+          <button>Remove</button>
+      </div>
+  </div>";
+  
+    }
+    echo "</div>";
+ 
+  ?>
+ <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+                <?php
+
+include '../includes/alertMessage.php'; 
+
+?>
+              
             <aside>
                 <div class="summary">
                     <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
