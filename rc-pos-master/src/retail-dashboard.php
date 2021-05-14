@@ -5,6 +5,17 @@ $title = "Retail Dashboard";
 
 include '../includes/pageHeader.php';
 ?>
+
+<!-- Opening connection to database to query and populate projections below -->
+
+<?php
+include("../includes/connection.php");
+
+  $sql = "SELECT * FROM Items";
+  $result = $conn->query($sql);
+
+  ?>
+
 <div id="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->

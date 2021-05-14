@@ -27,7 +27,17 @@ include '../includes/pageHeader.php';
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-money"></i>
                         </div>
+                        
                         <div class="card-text">
+<!-- Opening connection to database to query and populate projections below -->
+  <?php
+// include("../includes/connection.php");
+
+//   $result=mysql_query("SELECT count(*) as total from salesHistory where date between date_sub(now(), INTERVAL 2 WEEK) and now()");
+// $data=mysql_fetch_assoc($result);
+// echo $data['total'];
+
+  ?> 
                             <h1 class="text-center display-3"><strong>135</strong></h1>
                         </div>
                     </div>
