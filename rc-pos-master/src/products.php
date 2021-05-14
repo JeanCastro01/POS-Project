@@ -161,7 +161,7 @@ include '../includes/alertMessage.php';
                                         <div class="form-group">
                                             <label class="form-label" for="customFile">Default file input
                                                 example</label>
-                                            <input type="file" class="form-control" id="customFile" />
+                                            <input type="file" class="form-control" name="image" id="customFile" />
                                         </div>
 
                                         <div class="form-group">

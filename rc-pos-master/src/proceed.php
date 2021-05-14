@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>RC-POS - Purchase overview</title>
+        <title>CCT-POS - Purchase overview</title>
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
         <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
@@ -54,22 +54,15 @@
                         <span>Back</span>
                     </a>
                 </li>
-
-
-
             </ul>
+            
+            <!-- Database code to populate content from basket automatically -->
 
-            <!-- Page Content -->
-            <!-- DataTables -->
-
-
-
- <!-- Database code to populate content from basket automatically -->
-
- <?php
+            <?php
 include("../includes/connection.php");
 
-  $sql = "SELECT * FROM Items";
+$sql = "SELECT * FROM Items
+inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
   $result = $conn->query($sql);
 
   $nRows = $result->num_rows;
@@ -102,8 +95,8 @@ include("../includes/connection.php");
       <div class='basket-product'>
       <div class='item'>
           <div class='product-image'>
-          
-          <img src=".'data:image/jpeg;base64,'.base64_encode( $row['image'] )."'/>
+          <img>".'<img src="data:image/png;base64,'.base64_encode( $row['image'] ).'"/>'."</img>
+         
           </div>
           <div class='product-details'>
               <h1><strong><span class='item-quantity'>1</span> {$row['name']}</strong> 
@@ -120,51 +113,49 @@ include("../includes/connection.php");
       <div class='remove'>
           <button>Remove</button>
       </div>
-  </div>";
+  </div>
+  </div>
+
+  <aside>
+                <div class='summary'>
+                    <div class='summary-total-items'><span class='total-items'></span> Items in your Bag</div>
+                    <div class='summary-subtotal'>
+                        <div class='subtotal-title'>Subtotal</div>
+                        <div class='subtotal-value final-value' id='basket-subtotal'>{$row['price']}</div>
+                        <div class='summary-promo hide'>
+                            <div class='promo-title'>Promotion</div>
+                            <div class='promo-value final-value' id='basket-promo'></div>
+                        </div>
+                    </div>
+                    <div class='summary-delivery'>
+                        <select name='delivery-collection' class='summary-delivery-selection'>
+                            <option value='0' selected='selected'>Select Collection or Delivery</option>
+                            <option value='collection'>Collection</option>
+                            <option value='delivery'>Delivery</option>
+                        </select>
+                    </div>
+                    <div class='summary-total'>
+                        <div class='total-title'>Total</div>
+                        <div class='total-value final-value' id='basket-total'>{$row['price']}</div>
+                    </div>
+                    <div class='summary-checkout'>
+
+                        <a href='payment.php'>
+                            <button class='checkout-cta' href='payment.php'>Go to Secure Checkout</button>
+                        </a>
+                    </div>
+                </div>";
   
     }
     echo "</div>";
  
   ?>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------->
-<?php
+            <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+            <?php
 
 include '../includes/alertMessage.php'; 
 
 ?>
-
-            <aside>
-                <div class="summary">
-                    <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
-                    <div class="summary-subtotal">
-                        <div class="subtotal-title">Subtotal</div>
-                        <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
-                        <div class="summary-promo hide">
-                            <div class="promo-title">Promotion</div>
-                            <div class="promo-value final-value" id="basket-promo"></div>
-                        </div>
-                    </div>
-                    <div class="summary-delivery">
-                        <select name="delivery-collection" class="summary-delivery-selection">
-                            <option value="0" selected="selected">Select Collection or Delivery</option>
-                            <option value="collection">Collection</option>
-                            <option value="first-class">Royal Mail 1st Class</option>
-                            <option value="second-class">Royal Mail 2nd Class</option>
-                            <option value="signed-for">Royal Mail Special Delivery</option>
-                        </select>
-                    </div>
-                    <div class="summary-total">
-                        <div class="total-title">Total</div>
-                        <div class="total-value final-value" id="basket-total">130.00</div>
-                    </div>
-                    <div class="summary-checkout">
-
-                        <a href="payment.php">
-                            <button class="checkout-cta" href="payment.php">Go to Secure Checkout</button>
-                        </a>
-                    </div>
-                </div>
-
         </div>
         </div>
         </div>

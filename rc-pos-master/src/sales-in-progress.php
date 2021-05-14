@@ -96,7 +96,7 @@ inner join SalesRequestQueue on Items.Item_ID=SalesRequestQueue.reservation_ID";
         </label>
         </div>
         </td>
-        <td>".'<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>'."</td>
+        <td>".'<img src="data:image/png;base64,'.base64_encode( $row['image'] ).'"/>'."</td>
         <td>" . $row["name"] . "</td>
         <td>" . $row["type"] . "</td>
         <td>" . $row["brand"] . "</td>

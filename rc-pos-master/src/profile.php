@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>RC-POS - Profile</title>
+        <title>CCT-POS - Profile</title>
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
         <link href="css/styles.css" rel="stylesheet">
