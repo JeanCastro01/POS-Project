@@ -5,49 +5,30 @@ This Point of Sale (POS) web application is built using PHP, JavaScript, CSS, an
 
 ## Project Structure
 
-```
-pos-web-app/
-├── css/
-│   └── shopping cart, payment with styles and js added
-├── fonts/
-│   └── Add files via upload
-├── js/
-│   └── shopping cart, payment with styles and js added
-├── 404.html
-│   └── updates, creations on front-end design
-├── blank.html
-│   └── updates, creations on front-end design
-├── forgot-password.php
-│   └── formatting all the pages
-├── history.php
-│   └── checking some final codes
-├── index.php
-│   └── checking some final codes
-├── login.php
-│   └── update on queries and trying to fix image
-├── newSale.php
-│   └── checking some final codes
-├── payment.php
-│   └── update on queries and trying to fix image
-├── proceed.php
-│   └── checking some final codes
-├── products.php
-│   └── checking some final codes
-├── profile.php
-│   └── update on queries and trying to fix image
-├── retail-dashboard.php
-│   └── checking some final codes
-├── sales-in-progress.php
-│   └── checking some final codes
-├── setup.php
-│   └── update on queries and trying to fix image
-├── staff.php
-│   └── checking some final codes
-├── updateProducts.php
-│   └── checking some final codes
-├── updateStaff.php
-│   └── checking some final codes
-```
+# Project Overview
+
+This project includes various files related to the development of a web application. Below is a brief description of each file and its purpose:
+
+- **css/**: Contains styles for the shopping cart, payment system, and other components with associated JavaScript.
+- **fonts/**: Directory for uploading font files.
+- **js/**: Contains JavaScript files for the shopping cart, payment system, and other components with styles.
+- **404.html**: Updates and creations related to front-end design for the 404 error page.
+- **blank.html**: Updates and creations related to front-end design for a blank page template.
+- **forgot-password.php**: Formatting and styling of the password recovery page.
+- **history.php**: Reviewing functionality related to user history.
+- **index.php**: Finalizing the code for the home page.
+- **login.php**: Updates on database queries and fixing issues with images.
+- **newSale.php**: Finalizing the code for creating new sales.
+- **payment.php**: Updates on database queries and fixing issues with images related to payment.
+- **proceed.php**: Refining the code for the checkout process.
+- **products.php**: Finalizing the code for displaying products.
+- **profile.php**: Updates on queries and fixing issues with images related to user profiles.
+- **retail-dashboard.php**: Finalizing functionality for the retail dashboard.
+- **sales-in-progress.php**: Refining code for tracking sales in progress.
+- **setup.php**: Updates on queries and fixing issues with images related to setup.
+- **staff.php**: Finalizing the code for staff management.
+- **updateProducts.php**: Finalizing the code for updating products.
+- **updateStaff.php**: Finalizing the code for updating staff information.
 
 ## Features
 
